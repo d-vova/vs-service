@@ -15,7 +15,7 @@ var create = exports.create = function create ( name, port, stun, url ) {
   return new Service(name, port, stun, db);
 }
 
-var cluster = exports.cluster = function cluster ( url, interval ) {
+var cluster = exports.cluster = function cluster ( url ) {
   var config = { services: { dropSync: false } }
   var db = mongo.connect(uri, config);
 
