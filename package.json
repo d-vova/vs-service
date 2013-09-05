@@ -1,6 +1,6 @@
 {
   "name": "vs-service",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Tool for keeping track of service components in a cluster",
   "main": "vs-service.js",
   "scripts": {

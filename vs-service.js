@@ -10,14 +10,14 @@ var create = exports.create = function create ( name, port, stun, url ) {
     snapshots : { dropSync: false }
   }
 
-  var db = mongo.connect(uri, config);
+  var db = mongo.connect(url, config);
 
   return new Service(name, port, stun, db);
 }
 
 var cluster = exports.cluster = function cluster ( url ) {
   var config = { services: { dropSync: false } }
-  var db = mongo.connect(uri, config);
+  var db = mongo.connect(url, config);
 
   return new Cluster(db);
 }
