@@ -50,6 +50,8 @@ var stun = { host: 'stun.l.google.com', port: 19302 }
 var appsrvc = service.create(name, port, stun, url);
 ```
 
+(It is important to point out that the database is expected to have `services` and `snapshots` collections already setup)
+
 
 #### Discover ####
 
@@ -95,7 +97,8 @@ appsrvc.heartbeat(false);
 
 #### Snapshot ####
 
-Update service document with the information about the state of the system (cpu, memory, uptime)
+Update service document with the information about the state of the system (cpu, memory, uptime),
+and add the document to the snapshot history collection
 
 ```javascript
 appsrvc.snapshot();
