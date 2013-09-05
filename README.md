@@ -171,7 +171,7 @@ Get a single instance of a service that matches required criteria best
 (for now it automatically selects instance with the most amount of resources)
 
 ```javascript
-cluster.selectAll('Test', function ( error, value ) {
+cluster.selectOne('Test', function ( error, value ) {
   if ( !error ) {
     if ( !value ) {
       console.log('There is no instance available');
