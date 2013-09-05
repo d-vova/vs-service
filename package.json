@@ -1,0 +1,29 @@
+{
+  "name": "vs-service",
+  "version": "0.0.0",
+  "description": "Tool for keeping track of service components in a cluster",
+  "main": "vs-service.js",
+  "scripts": {
+    "test": "node vs-service.js test",
+    "start": "node vs-service.js"
+  },
+  "dependencies": {
+    "vs-stun": "*",
+    "vs-mongo": "*",
+    "vs-cache": "*"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/d-vova/vs-service.git"
+  },
+  "keywords": [
+    "service",
+    "cloud"
+  ],
+  "author": "Vladimir Darmin",
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}
