@@ -174,6 +174,17 @@ Get a single instance of a service that matches required criteria best
 
 Get all instances of a service
 
+```javascript
+cluster.selectAll('Test', function ( error, value ) {
+  if ( !error ) {
+    for ( var i = 0; i < value.length; i += 1 ) {
+      console.log('Test service is running on ' + value[i].host);
+    }
+  }
+  else console.log('An error occurred: ' + error);
+});
+```
+
 
 License
 -------
