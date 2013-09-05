@@ -168,6 +168,21 @@ cluster.retrieve(function ( error, value ) {
 #### Select One ####
 
 Get a single instance of a service that matches required criteria best
+(for now it automatically selects instance with the most amount of resources)
+
+```javascript
+cluster.selectAll('Test', function ( error, value ) {
+  if ( !error ) {
+    if ( !value ) {
+      console.log('There is no instance available');
+    }
+    else {
+      console.log('Best test service is running on ' + value.host);
+    }
+  }
+  else console.log('An error occurred: ' + error);
+});
+```
 
 
 #### Select All ####
