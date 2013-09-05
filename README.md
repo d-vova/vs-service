@@ -35,7 +35,7 @@ appsrvc.heartbeat(100).snapshot(60000);
 Service
 -------
 
-Create service instance representing current application process
+Create a service instance representing current application process
 
 ```javascript
 var service = require('vs-service');
@@ -119,6 +119,60 @@ appsrvc.snapshot(false);
 
 Cluster
 -------
+
+Create a cluster instance used to access information about related services
+
+```javascript
+var service = require('vs-service');
+
+var url = 'mongodb://localhost/sandbox';
+
+var cluster = service.cluster(url);
+```
+
+
+#### Refresh ####
+
+Setup minimum refresh interval to reduce the load on the database
+
+```javascript
+cluster.refresh(100);
+```
+
+
+#### Cleanup ####
+
+Setup the period of time after which stale services with no heartbeat are eliminated
+
+```javascript
+cluster.cleanup((500);
+```
+
+
+#### Retrieve ####
+
+Get all services from the database `services` collection
+
+```javascript
+cluster.retrieve(function ( error, value ) {
+  if ( !error ) {
+    for ( var name in value ) {
+      console.log(name + ' service instances: ' + value[name].length);
+    }
+  }
+  else console.log('An error occurred: ' + error);
+});
+```
+
+
+#### Select One ####
+
+Get a single instance of a service that matches required criteria best
+
+
+#### Select All ####
+
+Get all instances of a service
 
 
 License
