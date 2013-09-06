@@ -145,7 +145,7 @@ cluster.refresh(100);
 Setup the period of time after which stale services with no heartbeat are eliminated
 
 ```javascript
-cluster.cleanup((500);
+cluster.cleanup(500);
 ```
 
 
